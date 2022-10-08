@@ -103,24 +103,25 @@ def save_img_metadata(save_metadata_to_img, meta_dir, imgs_dir, image, prompt, n
 
 
 def generate_images(
-        output_dir_name='ai_epiphany',  # Name of the output directory.
+        # all the meta data
+        output_dir_name='Vincent_paint',  # Name of the output directory.
         execution_mode=ExecutionMode.GENERATE_DIVERSE,  # Choose between diverse generation and interpolation.
-        num_imgs=5,  # How many images you want to generate in this run.
+        num_imgs=10,  # How many images you want to generate in this run.
         
         ##### main args for controlling the generation #####
-        prompt="a painting of an ai robot having an epiphany moment",  # Unleash your inner neural network whisperer.
+        prompt="Interstellar",  # Unleash your inner neural network whisperer.
         num_inference_steps=50,  # More (e.g. 100, 200 etc) can create slightly better images.
         guidance_scale=7.5,  # Complete black magic. Usually somewhere between 3-10 is good - but experiment!
         seed=23,  # I love it more than 42. What are you going to do about it? (submit a PR? :P)
 
-        width=512,  # Make sure it's a multiple of 8.
-        height=512,
+        width=2048,  # Make sure it's a multiple of 8.
+        height=2048,
         src_latent_path=None,  # Set the latent of the 2 images you like (useful for INTERPOLATE mode).
         trg_latent_path=None,
         metadata_path=None,  # Used only in the REPRODUCE mode.
 
         ##### you'll set this one once and never touch it again depending on your HW #####
-        fp16=True,  # Set to True unless you have ~16 GBs of VRAM.
+        fp16=False,  # Set to True unless you have ~16 GBs of VRAM.
         save_metadata_to_img=True,  # If False we'll save metadata in a separate file otherwise we store it inside of the image.
 ):
     assert torch.cuda.is_available(), "You need a GPU to run this script."
@@ -144,6 +145,8 @@ def generate_images(
 
     # Hardcoded the recommended scheduler - feel free to play with it.
     lms = LMSDiscreteScheduler(beta_start=0.00085, beta_end=0.012, beta_schedule="scaled_linear")
+
+    #my_access_token = "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"
 
     # Create diffusion pipeline object.
     pipe = StableDiffusionPipeline.from_pretrained(
