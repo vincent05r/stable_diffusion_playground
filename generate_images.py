@@ -104,18 +104,18 @@ def save_img_metadata(save_metadata_to_img, meta_dir, imgs_dir, image, prompt, n
 
 def generate_images(
         # all the meta data
-        output_dir_name='Vincent_paint',  # Name of the output directory.
+        output_dir_name='cyberpunk city hi_sd42_it200',  # Name of the output directory.
         execution_mode=ExecutionMode.GENERATE_DIVERSE,  # Choose between diverse generation and interpolation.
-        num_imgs=10,  # How many images you want to generate in this run.
+        num_imgs=50,  # How many images you want to generate in this run.
         
         ##### main args for controlling the generation #####
-        prompt="Interstellar",  # Unleash your inner neural network whisperer.
-        num_inference_steps=50,  # More (e.g. 100, 200 etc) can create slightly better images.
+        prompt="cyberpunk city",  # Unleash your inner neural network whisperer.
+        num_inference_steps=200,  # More (e.g. 100, 200 etc) can create slightly better images.
         guidance_scale=7.5,  # Complete black magic. Usually somewhere between 3-10 is good - but experiment!
-        seed=23,  # I love it more than 42. What are you going to do about it? (submit a PR? :P)
+        seed=42,  # 23 ,42 feels good
 
-        width=2048,  # Make sure it's a multiple of 8.
-        height=2048,
+        width=512,  # Make sure it's a multiple of 8.
+        height=512,
         src_latent_path=None,  # Set the latent of the 2 images you like (useful for INTERPOLATE mode).
         trg_latent_path=None,
         metadata_path=None,  # Used only in the REPRODUCE mode.
