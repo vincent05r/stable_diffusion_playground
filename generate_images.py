@@ -104,15 +104,15 @@ def save_img_metadata(save_metadata_to_img, meta_dir, imgs_dir, image, prompt, n
 
 def generate_images(
         # all the meta data
-        output_dir_name='cyberpunk metropolitan it200 sd42',  # Name of the output directory.
+        output_dir_name='space shuttle Atmospheric entry it200 sd23',  # Name of the output directory.
         execution_mode=ExecutionMode.GENERATE_DIVERSE,  # Choose between diverse generation and interpolation.
-        num_imgs=10,  # How many images you want to generate in this run.
+        num_imgs=12,  # How many images you want to generate in this run.
         
         ##### main args for controlling the generation #####
-        prompt="cyberpunk metropolitan",  # Unleash your inner neural network whisperer.
+        prompt="space craft entry Atmospheric",  # Unleash your inner neural network whisperer.
         num_inference_steps=200,  # More (e.g. 100, 200 etc) can create slightly better images.
         guidance_scale=7.5,  # Complete black magic. Usually somewhere between 3-10 is good - but experiment!
-        seed=42,  # 23 ,42 feels good
+        seed=23,  # 23 ,42 feels good
 
         width=512,  # Make sure it's a multiple of 8.
         height=512,
@@ -120,11 +120,11 @@ def generate_images(
         trg_latent_path=None,
         metadata_path=None,  # Used only in the REPRODUCE mode.
 
-        ##### you'll set this one once and never touch it again depending on your HW #####
-        fp16=False,  # Set to True unless you have ~16 GBs of VRAM.
+        ##### hardware setup
+        fp16=False,  
         save_metadata_to_img=True,  # If False we'll save metadata in a separate file otherwise we store it inside of the image.
 ):
-    assert torch.cuda.is_available(), "You need a GPU to run this script."
+    assert torch.cuda.is_available(), "GPU needed to run this script."
     assert height % 8 == 0 and width % 8 == 0, f"Width and height need to be a multiple of 8, got (w,h)=({width},{height})."
     device = "cuda"
     if seed:  # If you want to have consistent runs, otherwise set to None.
