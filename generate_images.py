@@ -104,12 +104,12 @@ def save_img_metadata(save_metadata_to_img, meta_dir, imgs_dir, image, prompt, n
 
 def generate_images(
         # all the meta data
-        output_dir_name='space shuttle Atmospheric entry it200 sd23',  # Name of the output directory.
+        output_dir_name='prompt experiment',  # Name of the output directory.
         execution_mode=ExecutionMode.GENERATE_DIVERSE,  # Choose between diverse generation and interpolation.
-        num_imgs=12,  # How many images you want to generate in this run.
+        num_imgs=15,  # How many images you want to generate in this run.
         
         ##### main args for controlling the generation #####
-        prompt="space craft entry Atmospheric",  # Unleash your inner neural network whisperer.
+        prompt="a car driving through cyberpunk city",  # Unleash your inner neural network whisperer.
         num_inference_steps=200,  # More (e.g. 100, 200 etc) can create slightly better images.
         guidance_scale=7.5,  # Complete black magic. Usually somewhere between 3-10 is good - but experiment!
         seed=23,  # 23 ,42 feels good
