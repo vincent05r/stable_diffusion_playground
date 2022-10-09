@@ -104,12 +104,12 @@ def save_img_metadata(save_metadata_to_img, meta_dir, imgs_dir, image, prompt, n
 
 def generate_images(
         # all the meta data
-        output_dir_name='test_fp',  # Name of the output directory.
+        output_dir_name='cyberpunk metropolitan it200 sd42',  # Name of the output directory.
         execution_mode=ExecutionMode.GENERATE_DIVERSE,  # Choose between diverse generation and interpolation.
-        num_imgs=2,  # How many images you want to generate in this run.
+        num_imgs=10,  # How many images you want to generate in this run.
         
         ##### main args for controlling the generation #####
-        prompt="cyberpunk city",  # Unleash your inner neural network whisperer.
+        prompt="cyberpunk metropolitan",  # Unleash your inner neural network whisperer.
         num_inference_steps=200,  # More (e.g. 100, 200 etc) can create slightly better images.
         guidance_scale=7.5,  # Complete black magic. Usually somewhere between 3-10 is good - but experiment!
         seed=42,  # 23 ,42 feels good
