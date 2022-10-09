@@ -104,9 +104,9 @@ def save_img_metadata(save_metadata_to_img, meta_dir, imgs_dir, image, prompt, n
 
 def generate_images(
         # all the meta data
-        output_dir_name='cyberpunk city hi_sd42_it200',  # Name of the output directory.
+        output_dir_name='test_fp',  # Name of the output directory.
         execution_mode=ExecutionMode.GENERATE_DIVERSE,  # Choose between diverse generation and interpolation.
-        num_imgs=50,  # How many images you want to generate in this run.
+        num_imgs=2,  # How many images you want to generate in this run.
         
         ##### main args for controlling the generation #####
         prompt="cyberpunk city",  # Unleash your inner neural network whisperer.
